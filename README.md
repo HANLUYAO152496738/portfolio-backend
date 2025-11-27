@@ -4,8 +4,9 @@ A RESTful API built with Node.js, Express, and MongoDB for managing a personal p
 
 ## Live Demo
 
-- **API URL**: [Your deployed API URL here]
-- **Frontend URL**: [Your deployed frontend URL here]
+- **API URL**: https://portfolio-backend-j145okke2-ioawsjddfjswisahfasiks-projects.vercel.app
+- **Frontend URL**: https://portfolio-frontend-pq0e5hwqz-ioawsjddfjswisahfasiks-projects.vercel.app
+- **Source Code**: https://github.com/HANLUYAO152496738/portfolio-backend
 
 ## Features
 
@@ -169,18 +170,18 @@ npm start
 
 ## Deployment
 
-This API is designed to be deployed on platforms like:
-- Render
-- Heroku
-- Railway
-- DigitalOcean
+This API is deployed on Vercel.
 
-### Render Deployment
+### Vercel Deployment
 
-1. Create a new Web Service on Render
-2. Connect your GitHub repository
-3. Set environment variables in Render dashboard
-4. Deploy!
+The API is currently deployed at:
+https://portfolio-backend-j145okke2-ioawsjddfjswisahfasiks-projects.vercel.app
+
+To deploy your own instance:
+1. Install Vercel CLI: `npm install -g vercel`
+2. Run `vercel` in the project directory
+3. Set environment variables in Vercel dashboard or via CLI
+4. Deploy with `vercel --prod`
 
 ## Testing
 
