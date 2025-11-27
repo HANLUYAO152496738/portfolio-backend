@@ -17,12 +17,32 @@ const app = express();
 app.use(helmet());
 
 // CORS configuration
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? process.env.FRONTEND_URL
-    : ['http://localhost:3000', 'http://localhost:5173', 'http://127.0.0.1:5173'],
+const corsOptions = {
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:5173',
+      'http://127.0.0.1:5173'
+    ];
+
+    if (process.env.NODE_ENV === 'production') {
+      if (!origin || origin.includes('vercel.app') || origin === process.env.FRONTEND_URL) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    } else {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    }
+  },
   credentials: true
-}));
+};
+
+app.use(cors(corsOptions));
 
 // Body parser
 app.use(express.json());
